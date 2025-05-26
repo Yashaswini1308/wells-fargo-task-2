@@ -26,22 +26,16 @@ public class Security {
     @Column(nullable = false)
     private double purchasedPrice;
 
-    @OneToMany
-    @JoinColumn(name="portfolioId", nullable = false)
-    private Portfolio portfolio;
-
-
     public Security() {
     }
 
-    public Security(int securityId, String securityName, String category, Date purchasedDate, int quantity, double purchasedPrice, Portfolio portfolio) {
+    public Security(int securityId, String securityName, String category, Date purchasedDate, int quantity, double purchasedPrice) {
         this.securityId = securityId;
         this.securityName = securityName;
         this.category = category;
         this.purchasedDate = purchasedDate;
         this.quantity = quantity;
         this.purchasedPrice = purchasedPrice;
-        this.portfolio = portfolio;
     }
 
     public int getSecurityId() {
@@ -88,13 +82,6 @@ public class Security {
         this.purchasedPrice = purchasedPrice;
     }
 
-    public Portfolio getPortfolio() {
-        return portfolio;
-    }
-
-    public void setPortfolio(Portfolio portfolio) {
-        this.portfolio = portfolio;
-    }
 
 
 }

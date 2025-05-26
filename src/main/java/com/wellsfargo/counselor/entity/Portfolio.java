@@ -15,9 +15,6 @@ public class Portfolio {
     @Column(nullable = false)
     private Date creationDate;
 
-    @OneToMany
-    @JoinColumn(name="clientId", nullable = false)
-    private Client client;
 
     public Portfolio() {
     }
@@ -25,7 +22,6 @@ public class Portfolio {
     public Portfolio(int portfolioId, Date creationDate, Client client) {
         this.portfolioId = portfolioId;
         this.creationDate = creationDate;
-        this.client = client;
     }
 
     public int getPortfolioId() {
@@ -38,14 +34,6 @@ public class Portfolio {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
-    }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
     }
 }
 

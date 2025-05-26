@@ -24,9 +24,6 @@ public class Client {
     @Column(nullable = false)
     private String clientEmail;
 
-   @OneToMany
-    @JoinColumn(name="advisorId", nullable = false)
-    private Advisor advisor;
 
     public Client() {
     }
@@ -38,7 +35,6 @@ public class Client {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.clientEmail = clientEmail;
-        this.advisor = advisor;
     }
 
     public int getClientId() {
@@ -85,11 +81,4 @@ public class Client {
         this.clientEmail = clientEmail;
     }
 
-    public Advisor getAdvisor() {
-        return advisor;
-    }
-
-    public void setAdvisor(Advisor advisor) {
-        this.advisor = advisor;
-    }
 }
